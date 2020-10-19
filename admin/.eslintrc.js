@@ -1,28 +1,8 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true
+  extends: [require.resolve('@umijs/fabric/dist/eslint')],
+  globals: {
+    ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true,
+    page: true,
+    REACT_APP_ENV: true,
   },
-  'extends': [
-    'plugin:vue/essential',
-    // '@vue/prettier',
-    '@vue/typescript'
-  ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  },
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
-  },
-  overrides: [
-    {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)'
-      ],
-      env: {
-        mocha: true
-      }
-    }
-  ]
-}
+};
